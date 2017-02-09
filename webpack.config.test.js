@@ -32,7 +32,14 @@ module.exports = {
                     ]
                 }
             }
-        })
+        }),
+        new HtmlWebpackPlugin({
+            cache: true,
+            filename: "test/index.html",
+            showErrors: true,
+            template: "./test/support/index.html",
+            title: "Mocha Browser Tests",
+        }),
     ],
     output: {
         path: APP_ROOT + '/',

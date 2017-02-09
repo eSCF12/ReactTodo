@@ -5,6 +5,7 @@ var expect = require('expect');
 var $ = require('jquery');
 
 var AddTodo = require('AddTodo');
+import {it, describe} from 'mocha';
 
 describe('AddTodo', () => {
   it('should exist', () => {
