@@ -8,7 +8,7 @@ module.exports = {
         vendor: [
             '!!script-loader!jquery/dist/jquery.min.js',
             '!!script-loader!foundation-sites/dist/js/foundation.min.js',
-            './app/app.jsx'
+            './app/app.js'
         ]
     },
     externals: {
@@ -18,6 +18,11 @@ module.exports = {
     plugins: [
         //new webpack.HotModuleReplacementPlugin(),
         //new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        }),
         new webpack.ProvidePlugin({
             '$': 'jquery',
             'jQuery': 'jquery',
@@ -55,9 +60,12 @@ module.exports = {
     resolveLoader: {
         moduleExtensions: ['-loader']
     },
+    performance: {
+        hints: false
+    },
     node: {
         fs: 'empty',
-        child_process:'empty'
+        child_process: 'empty'
     },
     module: {
         rules: [
@@ -97,5 +105,23 @@ module.exports = {
         ]
     },
     target: 'node',
+    devServer: {
+        stats: {
+            colors: true,
+            // hash: false,
+            // version: false,
+            // timings: false,
+            // assets: false,
+            // chunks: false,
+            // modules: false,
+            // reasons: false,
+            // children: false,
+            // source: false,
+            // errors: true,
+            // errorDetails: true,
+            // warnings: false,
+            // publicPath: true
+        }
+    },
     devtool: 'cheap-module-eval-source-map'
 };

@@ -4,10 +4,10 @@ var React = require('react');
 var expect = require('expect');
 var $ = require('jquery');
 
-var TodoSearch = require('TodoSearch');
+var Todo = require('Todo');
 
-describe('TodoSearch', () => {
+describe('Todo', () => {
 	it('should exist', () => {
-		expect(TodoSearch).toExist();
+		expect(Todo).toExist();
 	});
 });

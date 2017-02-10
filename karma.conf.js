@@ -1,16 +1,16 @@
-var baseConfig = require('./webpack.config.js');
+let baseConfig = require('./webpack.config.js');
 
 module.exports = function (config) {
     config.set({
         basePath: '',
-        // browsers: ['ChromeWithoutSecurity'],
-        // customLaunchers: {
-        //     ChromeWithoutSecurity: {
-        //         base: 'Chrome',
-        //         flags: ['--disable-web-security']
-        //     }
-        // },
-        browsers: ['Chrome'],
+        browsers: ['ChromeWithoutSecurity'],
+        customLaunchers: {
+            ChromeWithoutSecurity: {
+                base: 'Chrome',
+                flags: ['--disable-web-security']
+            }
+        },
+        // browsers: ['Chrome'],
         // browsers: ['Firefox', 'FirefoxDeveloper', 'FirefoxAurora', 'FirefoxNightly'],
         // customLaunchers: {
         //     Chrome_without_security: {
